@@ -5,7 +5,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
-class MJobSeeder extends Seeder
+class MLocationSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -14,12 +14,15 @@ class MJobSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('m_jobs')->insert([
+        DB::table('m_locations')->insert([
             [
-                'name' => "IT Phần mềm",
+                'name' => "Hà Nội",
             ],
             [
-                'name' => "IT Phần cứng",
+                'name' => "TP Hồ Chí Minh",
+            ],
+            [
+                'name' => "Đà Nẵng",
             ],
         ]);
     }

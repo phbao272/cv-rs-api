@@ -17,8 +17,13 @@ class DatabaseSeeder extends Seeder
         // \App\Models\User::factory(10)->create();
         Model::unguard();
 
+        $this->call(MJobSeeder::class);
         $this->call(MSkillSeeder::class);
         $this->call(MSalarySeeder::class);
+        $this->call(MEducationLevelSeeder::class);
+        $this->call(MWorkingFromSeeder::class);
+        $this->call(MExperienceSeeder::class);
+        $this->call(MLocationSeeder::class);
 
         $this->call(UserSeeder::class);
         Model::reguard();

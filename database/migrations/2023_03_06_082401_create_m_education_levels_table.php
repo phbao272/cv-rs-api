@@ -17,6 +17,7 @@ class CreateMEducationLevelsTable extends Migration
             $table->id();
 
             $table->string("name");
+            $table->unsignedTinyInteger('value');
 
             $table->timestamps();
         });

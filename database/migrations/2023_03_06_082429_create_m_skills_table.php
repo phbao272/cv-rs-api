@@ -17,6 +17,8 @@ class CreateMSkillsTable extends Migration
             $table->id();
 
             $table->string("name");
+            $table->unsignedBigInteger("m_job_id");
+            $table->foreign('m_job_id')->references('id')->on('m_jobs')->onDelete('cascade');
 
             $table->timestamps();
         });

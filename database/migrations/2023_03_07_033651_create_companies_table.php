@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateMExperiencesTable extends Migration
+class CreateCompaniesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,14 @@ class CreateMExperiencesTable extends Migration
      */
     public function up()
     {
-        Schema::create('m_experiences', function (Blueprint $table) {
+        Schema::create('companies', function (Blueprint $table) {
             $table->id();
 
             $table->string("name");
-            $table->string("value");
+            $table->string("description");
+            $table->string("photo")->nullable();
+            $table->unsignedBigInteger("user_id");
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
 
             $table->timestamps();
         });
@@ -30,6 +33,6 @@ class CreateMExperiencesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('m_experiences');
+        Schema::dropIfExists('companies');
     }
 }

@@ -13,6 +13,6 @@ class MSalarySeeder extends Seeder
      */
     public function run()
     {
-        //
+
     }
 }
