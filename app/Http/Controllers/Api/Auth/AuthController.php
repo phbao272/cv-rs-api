@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api\Auth;
 use App\Http\Controllers\Controller;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
 class AuthController extends Controller
@@ -30,8 +31,7 @@ class AuthController extends Controller
         $token->save();
 
         return response()->json([
-            'status' => __('google sign in successful'),
-            'data' => $user,
+            'user' => $user,
             'access_token' => $tokenResult->accessToken,
         ]);
     }
@@ -54,5 +54,19 @@ class AuthController extends Controller
         return User::query()->where('email', $email)
             ->with([])
             ->first();
+    }
+
+    public function me()
+    {
+        return "12323121321";
+        $user = Auth::user();
+
+        if ($user) {
+//            $user = User::query()->where("id", $user->id);
+
+            return response()->json($user);
+        }
+
+        return null;
     }
 }
