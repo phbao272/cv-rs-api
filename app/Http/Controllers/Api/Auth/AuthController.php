@@ -58,7 +58,6 @@ class AuthController extends Controller
 
     public function me()
     {
-        return "12323121321";
         $user = Auth::user();
 
         if ($user) {
@@ -68,5 +67,16 @@ class AuthController extends Controller
         }
 
         return null;
+    }
+
+    public function logout()
+    {
+        if (Auth::check()) {
+            Auth::user()->token()->revoke();
+
+            return response()->json(['message' => 'Successful logout']);
+        }
+
+        return response()->json(['message' => 'Fail logout'], 401);
     }
 }

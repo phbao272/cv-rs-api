@@ -25,11 +25,12 @@ Route::namespace('\App\Http\Controllers\Api')
 
         Route::middleware(['auth:api'])->group(function () {
             Route::get('me', [AuthController::class, "me"]);
+            Route::post('logout', [AuthController::class, "logout"]);
 
-//            Route::apiResources([
-//
-//            ]);
+            Route::get("my-resume", "ResumeController@getMyResume");
 
-
+            Route::apiResources([
+                'resume' => 'ResumeController'
+            ]);
         });
     });
