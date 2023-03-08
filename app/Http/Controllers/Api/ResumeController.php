@@ -19,7 +19,8 @@ class ResumeController extends BaseController
     {
         $userId = Auth::id();
 
-        $resume = $this->query->where("user_id", $userId)->first();
+        $resume = $this->query->where(["user_id" => $userId])
+            ->with(["skills", "location"])->first();
 
         return response()->json($resume);
     }

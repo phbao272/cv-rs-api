@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class ResumeSkill extends Model
 {
     use HasFactory;
+
+//    public function m_skills()
+//    {
+//        return
+//    }
 }
