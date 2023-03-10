@@ -30,7 +30,9 @@ Route::namespace('\App\Http\Controllers\Api')
             Route::get("my-resume", "ResumeController@getMyResume");
 
             Route::apiResources([
-                'resume' => 'ResumeController'
+                'resume' => 'ResumeController',
+                'skill' => 'SkillController',
+                'location' => 'LocationController'
             ]);
         });
     });
