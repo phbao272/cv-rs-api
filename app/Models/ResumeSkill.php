@@ -9,8 +9,7 @@ class ResumeSkill extends Model
 {
     use HasFactory;
 
-//    public function m_skills()
-//    {
-//        return
-//    }
+    protected $fillable = [
+        "resume_id", "m_skill_id"
+    ];
 }
