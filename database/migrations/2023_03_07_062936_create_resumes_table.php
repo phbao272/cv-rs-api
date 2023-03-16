@@ -19,6 +19,7 @@ class CreateResumesTable extends Migration
             $table->string("name");
             $table->string("title");
             $table->string('email')->unique();
+            $table->date("birthday");
             $table->string("phone_number");
             $table->string("avatar")->nullable();
 
@@ -27,6 +28,9 @@ class CreateResumesTable extends Migration
 
             $table->unsignedBigInteger("m_location_id");
             $table->foreign('m_location_id')->references('id')->on('m_locations')->onDelete('cascade');
+
+            $table->unsignedBigInteger("m_education_level_id");
+            $table->foreign('m_education_level_id')->references('id')->on('m_education_levels')->onDelete('cascade');
 
             $table->timestamps();
         });
