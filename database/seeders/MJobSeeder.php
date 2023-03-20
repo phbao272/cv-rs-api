@@ -16,10 +16,16 @@ class MJobSeeder extends Seeder
     {
         DB::table('m_jobs')->insert([
             [
-                'name' => "IT Phần mềm",
+                'name' => "Web Developer",
             ],
             [
-                'name' => "IT Phần cứng",
+                'name' => "Mobile Developer",
+            ],
+            [
+                'name' => "Tester/ QA/ QC",
+            ],
+            [
+                'name' => "AI/Machine Learning",
             ],
         ]);
     }

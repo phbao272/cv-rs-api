@@ -34,21 +34,40 @@ class UserSeeder extends Seeder
 
         $ten_nguoi = array();
 
-        $softwareSkills = array('Java', 'PHP', 'Python', 'C++', 'Rupy', 'C', 'C#',
-            'ReactJS', "VueJS", "AngularJS", "Tester", "Front-End", "Back-End", "NestJS",
-            'Web', 'Mobile', 'Xử lý ảnh', 'Học sâu',
-            'Học máy', 'Công nghệ Blockchain', 'Phát triển trò chơi', 'Thiết kế UI/UX');
-
-        $hardwareSkills = array(
-            'Thiết kế vi mạch',
-            'Mạng máy tính',
-            'Thiết kế hệ thống',
-            'Tối ưu hóa phần cứng',
-            'Thiết kế linh kiện điện tử',
-            'Thiết kế firmware',
-            'Bảo trì phần cứng',
-            'Thiết kế hệ thống nhúng'
+        $webSkills = array("PHP", "Laravel", "FrontEnd", "BackEnd", "Python", "Django",
+            "Flask", "Ruby", "Ruby on Rails", "Java", "Spring Framework",
+            "ASP.NET", "MySQL", "PostgreSQL", "MongoDB", "Redis", "JavaScript", "TypeScript", "ReactJS",
+            "VueJS", "AngularJS", "jQuery", "Bootstrap", "Material UI", "Sass/Less", "Git",
         );
+
+        $mobileSkills = array(
+            "Swift",
+            "Objective-C",
+            "Java",
+            "Kotlin",
+            "React Native",
+            "Flutter",
+        );
+
+        $testSkills = array(
+            "Kiểm thử tự động (Automation testing)",
+            "Kiểm thử chức năng (Functional testing)",
+            "Kiểm thử tải (Load testing)",
+            "Kiểm thử hiệu năng (Performance testing)",
+            "Kiểm thử bảo mật (Security testing)",
+            "Kiểm thử giao diện người dùng (User interface testing)",
+            "Kiểm thử tích hợp (Integration testing)",
+            "Kiểm thử hệ thống (System testing)",
+            "Kiểm thử đơn vị (Unit testing)",
+            "Kiểm thử hồi quy (Regression testing)",
+            "Kiểm thử chấp nhận người dùng (User acceptance testing)",
+            "Phân tích yêu cầu (Requirement analysis)",
+            "Đặc tả kiểm thử (Test case specification)",
+            "Báo cáo kiểm thử (Test report)",
+        );
+
+        $AISkills = array('Matlab', 'TensorFlow', 'Scikit-learn', 'Computer Vision', 'Neural Networks',
+            'Big Data Processing', "Data Mining", "AngularJS", "Data Analysis", "Natural Language Processing - NLP");
 
         for ($i = 0; $i < count($ho); $i++) {
             $ho_rand = $ho[$i];
@@ -63,9 +82,10 @@ class UserSeeder extends Seeder
 
 //        shuffle($ten_nguoi);
 
-        $limitCandidate = 100;
+        $limitCandidate = 50;
 
         for ($i = 0; $i < $limitCandidate; $i++) {
+
             DB::table('users')->insert([
                 'name' => $ten_nguoi[$i],
                 'email' => $email_prefix .  "_" . ($i + 1) . '@gmail.com',
@@ -77,39 +97,70 @@ class UserSeeder extends Seeder
                 'name' => $ten_nguoi[$i],
                 'title' => $ten_nguoi[$i] . ' đang tìm việc làm',
                 'email' => $email_prefix .  "_" . ($i + 1) . '@gmail.com',
+                'birthday' => $faker->dateTimeBetween('1990-01-01', '2001-12-31'),
                 'phone_number' => $faker->phoneNumber,
 
                 "m_location_id" => rand(1, 3),
+                "m_education_level_id" => rand(1, 5),
                 "user_id" => ($i + 1)
             ]);
 
-            $isSkill = $i <= 70 ? "software" : "hardware";
-            $pivot = $i <= 70 ? count($softwareSkills) : count($hardwareSkills);
+            $job_category = rand(1, 4);
+//            print_r("job_category" . $job_category);
 
-            $jj = rand(0, $pivot);
+            $skills = [];
+            $startId = 0;
 
-            print_r("jj", $jj);
+            switch($job_category) {
+                case 1:
+                    $skills = $webSkills;
+                    break;
+                case 2:
+                    $skills = $mobileSkills;
+                    $startId = count($webSkills);
+                    break;
+                case 3:
+                    $skills = $testSkills;
+                    $startId = count($mobileSkills) + count($webSkills);
+
+                    break;
+                case 4:
+                    $skills = $AISkills;
+                    $startId = count($testSkills) + count($mobileSkills) + count($webSkills);
+
+                    break;
+                default:
+                    break;
+            }
+
+            print_r("Candidate: " . $i . " StartId: " . $startId . ", " . $job_category . "\n");
+
+            $pivot = count($skills);
+
+            $jj = rand(3, 5);
+
+//            print_r("jj" . $jj);
 
             $arrSkill = [];
 
-            for ($j = 0; $j < rand(1, $jj); $j++) {
+            for ($j = 0; $j < $jj; $j++) {
                 do {
-                    $skillId = $isSkill == "software" ? rand(1, $pivot) : rand(count($softwareSkills),count($softwareSkills) + $pivot);
+                    $skillId = rand(1, $pivot);
                 } while (in_array($skillId, $arrSkill));
 
                 $arrSkill[] = $skillId;
 
                 DB::table('resume_skills')->insert([
                     'resume_id' => ($i + 1),
-                    'm_skill_id' => $isSkill == "software" ? rand(1, $pivot) : rand(count($softwareSkills) + 1, count($softwareSkills) + $pivot)
+                    'm_skill_id' => $skillId + $startId
                 ]);
             }
-
-//            print_r($arrSkill);
         }
 
         // Generate Data Companies
-        $companies = array("Công ty Solashi", "Công ty Misa", "Công ty Tânaka", "Công ty Misamoa", "Công ty KTCK", "Công ty JWT");
+        $companies = array("Công ty TNHH Solashi", "Công ty cổ phần Misa", "Công ty cổ phần viễn thông FPT", "Công ty Hapo",
+            "Công ty cổ phần Findhay Việt Nam", "Công ty TNHH Shopee Express", "Công ty cổ phần TDT Asia",
+            "Công ty TNHH A", "Công ty TNHH B", "Công ty TNHH ZZZ");
 
         for ($i = 0; $i < count($companies); $i++) {
             DB::table('users')->insert([
