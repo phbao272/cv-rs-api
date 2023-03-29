@@ -23,6 +23,10 @@ Route::namespace('\App\Http\Controllers\Api')
     ->group(function () {
         Route::post('login', [AuthController::class, "login"]);
 
+        Route::apiResources([
+            'company' => 'CompanyController',
+        ]);
+
         Route::middleware(['auth:api'])->group(function () {
             Route::get('me', [AuthController::class, "me"]);
             Route::post('logout', [AuthController::class, "logout"]);
@@ -32,7 +36,10 @@ Route::namespace('\App\Http\Controllers\Api')
             Route::apiResources([
                 'resume' => 'ResumeController',
                 'skill' => 'SkillController',
-                'location' => 'LocationController'
+                'location' => 'LocationController',
+                'education-level' => 'EducationLevelController',
+                'experience' => 'ExperienceController',
+                'working-form' => 'WorkingFormController'
             ]);
         });
     });

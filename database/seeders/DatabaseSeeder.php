@@ -21,7 +21,7 @@ class DatabaseSeeder extends Seeder
         $this->call(MSkillSeeder::class);
         $this->call(MSalarySeeder::class);
         $this->call(MEducationLevelSeeder::class);
-        $this->call(MWorkingFromSeeder::class);
+        $this->call(MWorkingFormSeeder::class);
         $this->call(MExperienceSeeder::class);
         $this->call(MLocationSeeder::class);
 

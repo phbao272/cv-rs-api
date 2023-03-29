@@ -12,7 +12,8 @@ class Resume extends Model
     use HasFactory;
 
     protected $fillable = [
-        "name", "email", "title", "phone_number", "avatar", "user_id", "m_location_id"
+        "name", "email", "title", "phone_number", "birthday", "avatar", "user_id",
+        "m_location_id", "m_education_level_id", "m_experience_id", "m_working_form_id"
     ];
 
     public function resume_skills()

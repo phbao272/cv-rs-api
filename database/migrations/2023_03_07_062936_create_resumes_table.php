@@ -32,6 +32,12 @@ class CreateResumesTable extends Migration
             $table->unsignedBigInteger("m_education_level_id");
             $table->foreign('m_education_level_id')->references('id')->on('m_education_levels')->onDelete('cascade');
 
+            $table->unsignedBigInteger("m_experience_id");
+            $table->foreign('m_experience_id')->references('id')->on('m_experiences')->onDelete('cascade');
+
+            $table->unsignedBigInteger("m_working_form_id");
+            $table->foreign('m_working_form_id')->references('id')->on('m_working_forms')->onDelete('cascade');
+
             $table->timestamps();
         });
     }
