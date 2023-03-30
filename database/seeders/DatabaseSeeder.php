@@ -26,6 +26,7 @@ class DatabaseSeeder extends Seeder
         $this->call(MLocationSeeder::class);
 
         $this->call(UserSeeder::class);
+        $this->call(JobSeeder::class);
         Model::reguard();
     }
 }

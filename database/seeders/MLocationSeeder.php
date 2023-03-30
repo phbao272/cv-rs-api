@@ -21,9 +21,9 @@ class MLocationSeeder extends Seeder
             [
                 'name' => "TP Hồ Chí Minh",
             ],
-            [
-                'name' => "Đà Nẵng",
-            ],
+//            [
+//                'name' => "Đà Nẵng",
+//            ],
         ]);
     }
 }
