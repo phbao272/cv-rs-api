@@ -19,7 +19,7 @@ class CreateJobsTable extends Migration
             $table->string("title");
             $table->longText("description");
             $table->unsignedInteger("number_of_recruit");
-            $table->date("deadline")->nullable();
+            $table->date("deadline")->nullable()->default("2023-06-01");
             $table->unsignedTinyInteger("active")->default(1);
 
             $table->unsignedBigInteger("company_id");

@@ -19,7 +19,7 @@ class MWorkingFormSeeder extends Seeder
                 'name' => "Làm việc toàn thời gian",
             ],
             [
-                'name' => "làm việc bán thời gian",
+                'name' => "Làm việc bán thời gian",
             ],
         ]);
     }

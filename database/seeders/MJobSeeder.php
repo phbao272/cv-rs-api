@@ -24,9 +24,9 @@ class MJobSeeder extends Seeder
             [
                 'name' => "Tester/ QA/ QC",
             ],
-            [
-                'name' => "AI/Machine Learning",
-            ],
+//            [
+//                'name' => "AI/Machine Learning",
+//            ],
         ]);
     }
 }

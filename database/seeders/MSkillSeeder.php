@@ -17,16 +17,17 @@ class MSkillSeeder extends Seeder
         $webSkills = array("PHP", "Laravel", "FrontEnd", "BackEnd", "Python", "Django",
             "Flask", "Ruby", "Ruby on Rails", "Java", "Spring Framework",
             "ASP.NET", "MySQL", "PostgreSQL", "MongoDB", "Redis", "JavaScript", "TypeScript", "ReactJS",
-            "VueJS", "AngularJS", "jQuery", "Bootstrap", "Material UI", "Sass/Less", "Git",
+            "VueJS", "AngularJS", "jQuery", "Bootstrap", "Material UI", "Sass/Less", "Git", "NodeJS", "NestJS"
         );
 
         $mobileSkills = array(
             "Swift",
             "Objective-C",
-            "Java",
             "Kotlin",
             "React Native",
             "Flutter",
+            "Android",
+            "iOS"
         );
 
         $testSkills = array(
@@ -46,8 +47,8 @@ class MSkillSeeder extends Seeder
             "Báo cáo kiểm thử (Test report)",
         );
 
-        $AISkills = array('Matlab', 'TensorFlow', 'Scikit-learn', 'Computer Vision', 'Neural Networks',
-            'Big Data Processing', "Data Mining", "AngularJS", "Data Analysis", "Natural Language Processing - NLP");
+//        $AISkills = array('Matlab', 'TensorFlow', 'Scikit-learn', 'Computer Vision', 'Neural Networks',
+//            'Big Data Processing', "Data Mining", "AngularJS", "Data Analysis", "Natural Language Processing - NLP");
 
 
         for ($i = 0; $i < count($webSkills); $i++) {
@@ -71,11 +72,11 @@ class MSkillSeeder extends Seeder
             ]);
         }
 
-        for ($j = 0; $j < count($AISkills); $j++) {
-            DB::table('m_skills')->insert([
-                'name' => $AISkills[$j],
-                'm_job_id' => 4,
-            ]);
-        }
+//        for ($j = 0; $j < count($AISkills); $j++) {
+//            DB::table('m_skills')->insert([
+//                'name' => $AISkills[$j],
+//                'm_job_id' => 4,
+//            ]);
+//        }
     }
 }

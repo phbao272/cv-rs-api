@@ -38,7 +38,7 @@ class UserSeeder extends Seeder
         $webSkills = array("PHP", "Laravel", "FrontEnd", "BackEnd", "Python", "Django",
             "Flask", "Ruby", "Ruby on Rails", "Java", "Spring Framework",
             "ASP.NET", "MySQL", "PostgreSQL", "MongoDB", "Redis", "JavaScript", "TypeScript", "ReactJS",
-            "VueJS", "AngularJS", "jQuery", "Bootstrap", "Material UI", "Sass/Less", "Git",
+            "VueJS", "AngularJS", "jQuery", "Bootstrap", "Material UI", "Sass/Less", "Git", "NodeJS", "NestJS"
         );
 
         $mobileSkills = array(
@@ -48,6 +48,8 @@ class UserSeeder extends Seeder
             "Kotlin",
             "React Native",
             "Flutter",
+            "Android",
+            "iOS"
         );
 
         $testSkills = array(
@@ -66,9 +68,6 @@ class UserSeeder extends Seeder
             "Đặc tả kiểm thử (Test case specification)",
             "Báo cáo kiểm thử (Test report)",
         );
-
-        $AISkills = array('Matlab', 'TensorFlow', 'Scikit-learn', 'Computer Vision', 'Neural Networks',
-            'Big Data Processing', "Data Mining", "AngularJS", "Data Analysis", "Natural Language Processing - NLP");
 
         for ($i = 0; $i < count($ho); $i++) {
             $ho_rand = $ho[$i];
@@ -109,7 +108,7 @@ class UserSeeder extends Seeder
                 "m_working_form_id" => 1
             ]);
 
-            $job_category = rand(1, 4);
+            $job_category = rand(1, 3);
 //            print_r("job_category" . $job_category);
 
             $skills = [];
@@ -126,11 +125,6 @@ class UserSeeder extends Seeder
                 case 3:
                     $skills = $testSkills;
                     $startId = count($mobileSkills) + count($webSkills);
-
-                    break;
-                case 4:
-                    $skills = $AISkills;
-                    $startId = count($testSkills) + count($mobileSkills) + count($webSkills);
 
                     break;
                 default:
@@ -164,6 +158,7 @@ class UserSeeder extends Seeder
         // Generate Data Companies
         $companies = array("Công ty TNHH Solashi", "Công ty cổ phần Misa", "Công ty cổ phần viễn thông FPT", "Công ty Cổ Phần OneSoft - Falcon Game Studio",
             "Công ty TNHH Shopee Express",
+            "Công ty Cổ phần đầu tư Công Nghệ và Thương Mại Softdreams",
             "Công ty TNHH A", "Công ty TNHH B", "Công ty TNHH ZZZ");
 
         $desc = array("- Solashi tuy là một công ty non trẻ, nhưng chúng tôi luôn cố gắng đáp ứng sự tin tưởng của khách hàng bằng cách tạo ra các sản phẩm tốt nhất.
@@ -205,13 +200,24 @@ Tận tình: Con người MISA từ những người phát triển nền tảng,
 Ra mắt năm 2015, nền tảng thương mại Shopee được xây dựng nhằm cung cấp cho người sử dùng những trải nghiệm dễ dàng, an toàn và nhanh chóng khi mua sắm trực tuyến thông qua hệ thống hỗ trợ thanh toán và vận hành vững mạnh.
 
 Chúng tôi có niềm tin mạnh mẽ rằng trải nghiệm mua sắm trực tuyến phải đơn giản, dễ dàng và mang đến cảm xúc vui thích. Niềm tin này truyền cảm hứng và thúc đẩy chúng tôi mỗi ngày tại Shopee.",
-            "Đây là mô tả của công ty CNHH A", "Đây là mô tả của công ty TNHH B", "Đây là mô tả của công ty TNHH ZZZ");
+           "Công ty Cổ phần đầu tư công nghệ và thương mại Softdreams (gọi tắt là Softdreams) được thành lập vào năm 2012 tại Hà Nội với hoạt động ban đầu trong lĩnh vực phát triển phần mềm, công nghệ thông tin phục vụ doanh nghiệp và chính phủ.
+
+Các sản phẩm phần mềm của Softdreams đang cung cấp cho hàng trăm nghìn doanh nghiệp với hàng chục triệu người dùng trên toàn quốc.
+
+Các sản phẩm nổi bật trên thị trường
+
++ Hóa đơn điện tử Easyinvoice
++ Phần mềm kế toán Easybooks
++ Chữ ký số EasyCA
++ Phần mềm kế khai Easypit
++ Phần mềm in vé điện tử Easyticket", "Đây là mô tả của công ty CNHH A", "Đây là mô tả của công ty TNHH B", "Đây là mô tả của công ty TNHH ZZZ");
 
         $photoCompany = array("https://cdn.topcv.vn/140/company_logos/cong-ty-tnhh-solashi-600fd89f28f5c.jpg",
             "https://cdn.topcv.vn/80/company_logos/YVVFSY05ZUhqjlVHtBl2kOD1a189WFj0_1652947920____d78c5dd2ab820dcbb9a367b40e712067.jpg",
             "https://cdn.topcv.vn/80/company_logos/fpt-telecom-595c8c48f0e07_rs.jpg",
             "https://cdn.topcv.vn/80/company_logos/cong-ty-co-phan-onesoft-603358ac50d4b.jpg",
-            "https://cdn.topcv.vn/80/company_logos/3hGPe93OfHOUL2QUpNJijMwJ6s0uZ3Gr_1637140440____ea75d9fb6acf791dbeee91c457f6863e.png");
+            "https://cdn.topcv.vn/80/company_logos/3hGPe93OfHOUL2QUpNJijMwJ6s0uZ3Gr_1637140440____ea75d9fb6acf791dbeee91c457f6863e.png",
+            "https://cdn.topcv.vn/80/company_logos/cong-ty-co-phan-dau-tu-cong-nghe-va-thuong-mai-softdreams-5c6cb0f7177cb_rs.jpg", null, null, null);
 
         for ($i = 0; $i < count($companies); $i++) {
             DB::table('users')->insert([
@@ -225,7 +231,7 @@ Chúng tôi có niềm tin mạnh mẽ rằng trải nghiệm mua sắm trực t
                 'name' => $companies[$i],
                 'description' => $desc[$i],
                 'photo' => $photoCompany[$i],
-                'user_id' => $i + $limitCandidate
+                'user_id' => $i + $limitCandidate + 1
             ]);
         }
     }
