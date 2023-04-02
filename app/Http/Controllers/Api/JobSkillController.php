@@ -15,7 +15,16 @@ class JobSkillController extends BaseController
         $this->model = new JobSkill();
     }
 
-//    public function storeArray()
+    public function storeArray($job, $ids)
+    {
+        collect($ids)
+            ->each(function ($id) use ($job) {
+                $this->query->create([
+                    'job_id' => $job->id,
+                    'm_skill_id' => $id
+                ]);
+            });
+    }
 
     public function updateArray($job, $newIds)
     {
@@ -24,14 +33,14 @@ class JobSkillController extends BaseController
 
         collect($oldData)
             ->each(function ($item) use ($newIds) {
-                if (! in_array($item->m_skill_id, $newIds)) {
+                if (!in_array($item->m_skill_id, $newIds)) {
                     $item->delete();
                 }
             });
 
         collect($newIds)
             ->each(function ($newId) use ($oldIds, $job) {
-                if (! in_array($newId, $oldIds)) {
+                if (!in_array($newId, $oldIds)) {
                     $this->query->create([
                         'job_id' => $job->id,
                         'm_skill_id' => $newId

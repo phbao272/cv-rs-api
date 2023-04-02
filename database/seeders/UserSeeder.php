@@ -44,7 +44,6 @@ class UserSeeder extends Seeder
         $mobileSkills = array(
             "Swift",
             "Objective-C",
-            "Java",
             "Kotlin",
             "React Native",
             "Flutter",

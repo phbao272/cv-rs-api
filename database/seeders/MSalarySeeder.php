@@ -16,7 +16,7 @@ class MSalarySeeder extends Seeder
     {
         $salaries = array(
             "Dưới 3 triệu", "3 - 5 triệu", "5 - 7 triệu", "10 - 12 triệu", "12 - 15 triệu",
-            "15 - 20 triệu", "20 - 25 triệu", "25 - 30 triệu", "trên 30 triệu", "thỏa thuận"
+            "15 - 20 triệu", "20 - 25 triệu", "25 - 30 triệu", "trên 30 triệu", "Thỏa thuận"
         );
 
         for ($i = 0; $i < count($salaries); $i++) {

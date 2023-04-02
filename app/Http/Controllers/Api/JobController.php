@@ -59,6 +59,20 @@ class JobController extends BaseController
         return response()->json($job);
     }
 
+    public function store(Request $request)
+    {
+        $user_id = Auth::id();
+        $company = Company::query()->where("user_id", $user_id)->first();
+
+        $data = $request->only($this->model->getFillable());
+        $data = array_merge($data, ['company_id' => $company->id]);
+
+        $job = $this->query->create($data);
+        $this->jobSkillController->storeArray($job, $request->skills);
+
+        return $job;
+    }
+
     public function update(Request $request, $id)
     {
         $job = $this->query->where("id", $id)->first();
