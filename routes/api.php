@@ -43,6 +43,10 @@ Route::namespace('\App\Http\Controllers\Api')
             Route::get("my-resume", "ResumeController@getMyResume");
             Route::get("my-job", "JobController@getMyJob");
 
+            Route::get('get-interaction-job', "UserInteractionJobController@getInteractionJob");
+            Route::post('calc-rating-click', "UserInteractionJobController@calcRatingByClick");
+            Route::post('calc-rating-applied-liked', "UserInteractionJobController@calcRatingByAppliedOrLiked");
+
             Route::apiResources([
                 'resume' => 'ResumeController',
                 'job' => 'JobController'
