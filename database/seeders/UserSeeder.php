@@ -37,7 +37,7 @@ class UserSeeder extends Seeder
 
         $webSkills = array("PHP", "Laravel", "FrontEnd", "BackEnd", "Python", "Django",
             "Flask", "Ruby", "Ruby on Rails", "Java", "Spring Framework",
-            "ASP.NET", "MySQL", "PostgreSQL", "MongoDB", "Redis", "JavaScript", "TypeScript", "ReactJS",
+            ".NET", "MySQL", "PostgreSQL", "MongoDB", "Redis", "JavaScript", "TypeScript", "ReactJS",
             "VueJS", "AngularJS", "jQuery", "Bootstrap", "Material UI", "Sass/Less", "Git", "NodeJS", "NestJS"
         );
 
