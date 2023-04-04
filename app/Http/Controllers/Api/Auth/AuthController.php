@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Models\Resume;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -52,7 +53,7 @@ class AuthController extends Controller
     public function loginPageUserByEmail($email)
     {
         return User::query()->where('email', $email)
-            ->with([])
+            ->with(["resume.skills"])
             ->first();
     }
 
@@ -62,6 +63,10 @@ class AuthController extends Controller
 
         if ($user) {
 //            $user = User::query()->where("id", $user->id);
+            if ($user->role == User::ROLE['CANDIDATE']) {
+                $resume = Resume::query()->where("user_id", $user->id)->with("skills")->first();
+                $user['resume'] = $resume;
+            }
 
             return response()->json($user);
         }

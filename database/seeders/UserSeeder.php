@@ -81,7 +81,7 @@ class UserSeeder extends Seeder
 
 //        shuffle($ten_nguoi);
 
-        $limitCandidate = 300;
+        $limitCandidate = 150;
 
         for ($i = 0; $i < $limitCandidate; $i++) {
 
