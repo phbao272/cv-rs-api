@@ -81,7 +81,7 @@ class UserSeeder extends Seeder
 
 //        shuffle($ten_nguoi);
 
-        $limitCandidate = 10;
+        $limitCandidate = 300;
 
         for ($i = 0; $i < $limitCandidate; $i++) {
 
@@ -101,8 +101,13 @@ class UserSeeder extends Seeder
 
                 "user_id" => ($i + 1),
 
-                "m_location_id" => rand(1, 2),
-                "m_education_level_id" => rand(1, 5),
+//                "m_location_id" => rand(1, 2),
+//                "m_education_level_id" => rand(1, 5),
+//                "m_experience_id" => rand(1, 8),
+//                "m_working_form_id" => 1,
+
+                "m_location_id" => 1,
+                "m_education_level_id" => rand(2, 5),
                 "m_experience_id" => rand(1, 8),
                 "m_working_form_id" => 1
             ]);
