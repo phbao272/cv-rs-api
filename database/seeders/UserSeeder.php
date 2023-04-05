@@ -85,14 +85,20 @@ class UserSeeder extends Seeder
         $limitCandidate = 150;
 
         for ($i = 0; $i < $limitCandidate; $i++) {
-            $m_experience_id = 0;
-
-            if ($i < 90) {
-                $m_experience_id = rand(2, 5);
+            if ($i < 80) {
+                if ($i < 20) {
+                    $m_experience_id = rand(4, 6);
+                } else {
+                    $m_experience_id = rand(2, 5);
+                }
             } else {
                 $m_experience_id = rand(1, 8);
             }
 
+            // 1. Web
+            // 2. Mobile
+            // 3. Tester
+            $job_category = rand(1, 3);
 
             DB::table('users')->insert([
                 'name' => $ten_nguoi[$i],
@@ -101,82 +107,86 @@ class UserSeeder extends Seeder
                 'role' => User::ROLE["CANDIDATE"]
             ]);
 
-            DB::table('resumes')->insert([
-                'name' => $ten_nguoi[$i],
-                'title' => $ten_nguoi[$i] . ' đang tìm việc làm',
-                'email' => $email_prefix .  "_" . ($i + 1) . '@gmail.com',
-                'birthday' => $faker->dateTimeBetween('01-01-1990', '31-12-1998'),
-                'phone_number' => $faker->phoneNumber,
+            // 100 ứng viên có CV, 50 ứng viên không có CV
+            if ($i < 100) {
+                DB::table('resumes')->insert([
+                    'name' => $ten_nguoi[$i],
+                    'title' => $ten_nguoi[$i] . ' đang tìm việc làm',
+                    'email' => $email_prefix .  "_" . ($i + 1) . '@gmail.com',
+                    'birthday' => $faker->dateTimeBetween('01-01-1990', '31-12-1998'),
+                    'phone_number' => $faker->phoneNumber,
 
-                "user_id" => ($i + 1),
+                    "m_job_id" => $job_category,
+                    "user_id" => ($i + 1),
 
 //                "m_location_id" => rand(1, 2),
 //                "m_education_level_id" => rand(1, 5),
 //                "m_experience_id" => rand(1, 8),
 //                "m_working_form_id" => 1,
 
-                "m_location_id" => 1,
-                "m_education_level_id" => 4, // Đại học
-                "m_experience_id" => $m_experience_id,
-                "m_working_form_id" => 1
-            ]);
+                    "m_location_id" => 1,
+                    "m_education_level_id" => 4, // Đại học
+                    "m_experience_id" => $m_experience_id,
+                    "m_working_form_id" => 1
+                ]);
 
-            $job_category = rand(1, 3);
+                $job_category = rand(1, 3);
 //            print_r("job_category" . $job_category);
 
-            $skills = [];
-            $startId = 0;
+                $skills = [];
+                $startId = 0;
 
-            switch($job_category) {
-                case 1:
-                    $skills = $webSkills;
-                    break;
-                case 2:
-                    $skills = $mobileSkills;
-                    $startId = count($webSkills);
-                    break;
-                case 3:
-                    $skills = $testSkills;
-                    $startId = count($mobileSkills) + count($webSkills);
+                switch($job_category) {
+                    case 1:
+                        $skills = $webSkills;
+                        break;
+                    case 2:
+                        $skills = $mobileSkills;
+                        $startId = count($webSkills);
+                        break;
+                    case 3:
+                        $skills = $testSkills;
+                        $startId = count($mobileSkills) + count($webSkills);
 
-                    break;
-                default:
-                    break;
-            }
+                        break;
+                    default:
+                        break;
+                }
 
 
-            $pivot = count($skills);
+                $pivot = count($skills);
 
-            $jj = 0;
+                $jj = 0;
 
-            // Nếu người có trình độ duới 1 năm kinh nghiêm
-            if ($m_experience_id <= 2) {
-                $jj = 3;
-            } else if ($m_experience_id <= 4) { // 1 năm < x < 2 năm
-                $jj = rand(4, 5);
-            } else {
-                $jj = rand(5, 7);
-            }
+                // Nếu người có trình độ duới 1 năm kinh nghiêm
+                if ($m_experience_id <= 2) {
+                    $jj = 3;
+                } else if ($m_experience_id <= 4) { // 1 năm < x < 2 năm
+                    $jj = rand(4, 5);
+                } else {
+                    $jj = rand(5, 7);
+                }
 
 //            print_r("jj" . $jj);
 
-            $arrSkill = [];
+                $arrSkill = [];
 
-            for ($j = 0; $j < $jj; $j++) {
-                do {
-                    $skillId = rand(1, $pivot);
-                } while (in_array($skillId, $arrSkill));
+                for ($j = 0; $j < $jj; $j++) {
+                    do {
+                        $skillId = rand(1, $pivot);
+                    } while (in_array($skillId, $arrSkill));
 
-                $arrSkill[] = $skillId;
+                    $arrSkill[] = $skillId;
 
-                DB::table('resume_skills')->insert([
-                    'resume_id' => ($i + 1),
-                    'm_skill_id' => $skillId + $startId
-                ]);
+                    DB::table('resume_skills')->insert([
+                        'resume_id' => ($i + 1),
+                        'm_skill_id' => $skillId + $startId
+                    ]);
+                }
+
+                print_r("Candidate: " . $i . " StartId: " . $startId . ", " . $job_category . ", skills: " . $jj . ", " . $m_experience_id. "\n");
+
             }
-
-            print_r("Candidate: " . $i . " StartId: " . $startId . ", " . $job_category . ", skills: " . $jj . ", " . $m_experience_id. "\n");
-
         }
 
         // Generate Data Companies

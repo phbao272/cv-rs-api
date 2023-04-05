@@ -107,6 +107,6 @@ class UserInteractionJobController extends BaseController
 
     public function calcRating($numOfClick, $applied, $liked)
     {
-        return 0.01 * $numOfClick + 0.495 * $applied + 0.495 * $liked;
+        return 0.02 * $numOfClick + 0.49 * $applied + 0.49 * $liked;
     }
 }

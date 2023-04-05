@@ -17,11 +17,14 @@ class CreateResumesTable extends Migration
             $table->id();
 
             $table->string("name");
-            $table->string("title");
+            $table->string("title")->nullable();
             $table->string('email')->unique();
             $table->date("birthday");
             $table->string("phone_number");
             $table->string("avatar")->nullable();
+
+            $table->unsignedBigInteger("m_job_id");
+            $table->foreign('m_job_id')->references('id')->on('m_jobs')->onDelete('cascade');
 
             $table->unsignedBigInteger("user_id");
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');

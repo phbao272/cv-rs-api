@@ -36,6 +36,8 @@ Báo cáo định kỳ hoặc theo yêu cầu cho quản lý.',
                 'm_education_level_id' => 3,
                 'm_experience_id' => 3,
                 'm_salary_id' => 4,
+
+                'm_job_id' => 1,
                 'skills' => [10, 11, 13] // Java, Spring Framework, MySQL
             ],
             [
@@ -60,6 +62,7 @@ Liên tục khám phá, đánh giá và triển khai các công nghệ mới đ�
                 'm_education_level_id' => 4,
                 'm_experience_id' => 7,
                 'm_salary_id' => 10,
+                'm_job_id' => 2,
                 'skills' => [10, 31, 34] // Java, Kotlin, Android
             ],
             [
@@ -77,6 +80,7 @@ Tốt nghiệp đại học, cao đẳng chuyên ngành IT',
                 'm_location_id' => 1,
                 'm_education_level_id' => 4,
                 'm_experience_id' => 4,
+                'm_job_id' => 1,
                 'm_salary_id' => 10,
                 'skills' => [17, 18, 3, 19] // Javascript, Typescript, FrontEnd, ReactJS
             ],
@@ -93,6 +97,7 @@ Dựa vào tài liệu thiết kế sẽ làm ở cả FrontEnd và Backend',
                 'm_location_id' => 1,
                 'm_education_level_id' => 4,
                 'm_experience_id' => 1,
+                'm_job_id' => 1,
                 'm_salary_id' => 2,
                 'skills' => [1, 10, 12] // PHP, Java, .NET
             ],
@@ -115,6 +120,7 @@ Thực hiện đo điểm chuẩn, hiệu suất và phân tích bảo mật.',
                 'm_location_id' => 1,
                 'm_education_level_id' => 3,
                 'm_experience_id' => 3,
+                'm_job_id' => 2,
                 'm_salary_id' => 2,
                 'skills' => [34, 35, 32] // Android, iOS, ReactNative
             ],
@@ -133,6 +139,7 @@ Phối hợp cùng đội ngũ BA phân tích, thiết kế, đưa ra giải ph�
                 'm_location_id' => 1,
                 'm_education_level_id' => 3,
                 'm_experience_id' => 3,
+                'm_job_id' => 1,
                 'm_salary_id' => 10,
                 'skills' => [12, 14, 20, 27, 26] // ASP.NET, PostgreSQL, VueJS, NodeJS, Git
             ],
@@ -150,6 +157,7 @@ Phối hợp với các đơn vị chức năng trong Trung tâm CNTT và các �
                 'm_location_id' => 1,
                 'm_education_level_id' => 4,
                 'm_experience_id' => 5,
+                'm_job_id' => 3,
                 'm_salary_id' => 8,
                 'skills' => [36, 40, 43, 44, 47, 48] // ASP.NET, PostgreSQL, VueJS, NodeJS
             ],
@@ -168,6 +176,7 @@ Sẵn sàng nghiên cứu các giải pháp công nghệ trên thị trường �
                 'm_education_level_id' => 4,
                 'm_experience_id' => 3,
                 'm_salary_id' => 10,
+                'm_job_id' => 1,
                 'skills' => [5, 6, 14, 26] // Python, Django, PostgreSQL, Git
             ],
             [
@@ -182,6 +191,7 @@ Làm việc theo sự phân công của Trưởng nhóm/Quản lý dự án, ph�
                 'm_location_id' => 1,
                 'm_education_level_id' => 4,
                 'm_experience_id' => 1,
+                'm_job_id' => 1,
                 'm_salary_id' => 2,
                 'skills' => [20, 26, 23] // VueJS, Git, Bootstrap
             ],
@@ -198,6 +208,7 @@ o Phát triển phần mềm theo quy trình chuyên nghiệp: Hiểu các bư�
                 'm_location_id' => 1,
                 'm_education_level_id' => 4,
                 'm_experience_id' => 2,
+                'm_job_id' => 1,
                 'm_salary_id' => 3,
                 'skills' => [3, 4, 10, 13, 11] // FrontEnd, BackEnd, Java, MySQL, Spring Framework
             ],
@@ -215,6 +226,7 @@ Các công việc khác trao đổi cụ thể khi phỏng vấn. ​',
                 'm_location_id' => 1,
                 'm_education_level_id' => 4,
                 'm_experience_id' => 2,
+                'm_job_id' => 1,
                 'm_salary_id' => 4,
                 'skills' => [1, 2, 17] // PHP, Laravel, Javascript
             ],
@@ -227,6 +239,7 @@ Các công việc khác trao đổi cụ thể khi phỏng vấn. ​',
                 'm_location_id' => 1,
                 'm_education_level_id' => 4,
                 'm_experience_id' => 5,
+                'm_job_id' => 1,
                 'm_salary_id' => 10,
                 'skills' => [13, 27, 19, 20, 21] // MySQL, NodeJS, ReactJS, VueJS, AngularJS
             ],
@@ -245,6 +258,7 @@ Hỗ trợ kỹ thuật trong quá trình triển khai dự án và bảo hành 
                 'm_location_id' => 1,
                 'm_education_level_id' => 3,
                 'm_experience_id' => 3,
+                'm_job_id' => 1,
                 'm_salary_id' => 10,
                 'skills' => [13, 17, 19, 23, 32] // MySQL, Javascript, ReactJS, Bootstrap, ReactNative
             ],
@@ -257,6 +271,7 @@ Hỗ trợ kỹ thuật trong quá trình triển khai dự án và bảo hành 
                 'm_location_id' => 1,
                 'm_education_level_id' => 3,
                 'm_experience_id' => 3,
+                'm_job_id' => 2,
                 'm_salary_id' => 10,
                 'skills' => [29, 30, 35] // Swift, Objective-C, iOS
             ],
@@ -275,6 +290,7 @@ Chấp nhận sinh viên mới tốt nghiệp: sẽ được đào tạo on job'
                 'm_location_id' => 1,
                 'm_education_level_id' => 4,
                 'm_experience_id' => 2,
+                'm_job_id' => 1,
                 'm_salary_id' => 3,
                 'skills' => [12, 4, 13, 14] // ASP.NET, BackEnd, MySQL, PostgreSQL
             ],
@@ -301,6 +317,7 @@ Chấp nhận sinh viên mới tốt nghiệp: sẽ được đào tạo on job'
                 'm_location_id' => 1,
                 'm_education_level_id' => 4,
                 'm_experience_id' => 2,
+                'm_job_id' => 1,
                 'm_salary_id' => 3,
                 'skills' => [27, 4, 15, 14] // NodeJS, BackEnd, MongoDB, PostgreSQL
             ],
@@ -326,6 +343,7 @@ Các công việc khác theo sự chỉ đạo của Trưởng phòng',
                 'm_location_id' => 1,
                 'm_education_level_id' => 4,
                 'm_experience_id' => 2,
+                'm_job_id' => 2,
                 'm_salary_id' => 3,
                 'skills' => [34, 33] // Android, Flutter
             ],
@@ -344,6 +362,7 @@ Các công việc khác theo sự chỉ đạo của Trưởng phòng',
                 'm_location_id' => 1,
                 'm_education_level_id' => 4,
                 'm_experience_id' => 1,
+                'm_job_id' => 1,
                 'm_salary_id' => 1,
                 'skills' => [3, 19, 17] // FrontEnd, ReactJS, Javascript
             ],
@@ -366,6 +385,7 @@ Kiến thức về JavaScript, HTML, CSS.',
                 'm_location_id' => 1,
                 'm_education_level_id' => 4,
                 'm_experience_id' => 5,
+                'm_job_id' => 1,
                 'm_salary_id' => 10,
                 'skills' => [1, 2, 13] // PHP, Laravel, MySQL
             ],
@@ -386,6 +406,7 @@ Có khả năng làm việc dưới áp lực cao.',
                 'm_location_id' => 1,
                 'm_education_level_id' => 4,
                 'm_experience_id' => 5,
+                'm_job_id' => 3,
                 'm_salary_id' => 10,
                 'skills' => [36, 44, 42, 48, 49] //
             ],
@@ -406,6 +427,7 @@ Cung cấp hướng dẫn kỹ thuật và hướng dẫn phù hợp cho các th
                 'm_location_id' => 1,
                 'm_education_level_id' => 4,
                 'm_experience_id' => 8,
+                'm_job_id' => 1,
                 'm_salary_id' => 10,
                 'skills' => [3, 17, 18, 19, 20, 21, 22, 26] // FrontEnd, Javascript, Typescript, ReactJS, VueJS, AngularJS, jQuery, git
             ],
@@ -424,6 +446,7 @@ Sẵn sàng học hỏi và thích nghi với công nghệ mới',
                 'm_location_id' => 1,
                 'm_education_level_id' => 4,
                 'm_experience_id' => 4,
+                'm_job_id' => 1,
                 'm_salary_id' => 5,
                 'skills' => [10, 11] // Java, Spring, Typescript, ReactJS, VueJS, AngularJS, jQuery, git
             ],
@@ -444,6 +467,7 @@ Sẵn sàng học hỏi và thích nghi với công nghệ mới',
                 'm_location_id' => 1,
                 'm_education_level_id' => 3,
                 'm_experience_id' => 2,
+                'm_job_id' => 2,
                 'm_salary_id' => 3,
                 'skills' => [33] // Flutter
             ],
@@ -457,6 +481,7 @@ Lên kế hoạch, quản lý tiến độ, đánh giá chất lượng của b�
                 'm_working_form_id' => 1,
                 'm_location_id' => 1,
                 'm_education_level_id' => 3,
+                'm_job_id' => 1,
                 'm_experience_id' => 3,
                 'm_salary_id' => 4,
                 'skills' => [27, 28, 4] // 'NodeJS, NestJS, BackEnd'
@@ -478,6 +503,7 @@ Lên kế hoạch, quản lý tiến độ, đánh giá chất lượng của b�
                 'm_location_id' => 1,
                 'm_education_level_id' => 3,
                 'm_experience_id' => 3,
+                'm_job_id' => 3,
                 'm_salary_id' => 4,
                 'skills' => [44, 42, 36] // Unit test, Kiểm thử tích hợp (Integration testing), Automation test
             ],
@@ -512,6 +538,7 @@ Lên kế hoạch, quản lý tiến độ, đánh giá chất lượng của b�
                 'm_location_id' => 1,
                 'm_education_level_id' => 3,
                 'm_experience_id' => 4,
+                'm_job_id' => 2,
                 'm_salary_id' => 10,
                 'skills' => [29, 30, 31, 10] // Objective-C, Swift, Java, Kotlin
             ],
@@ -546,6 +573,7 @@ Lên kế hoạch, quản lý tiến độ, đánh giá chất lượng của b�
                 'm_location_id' => 1,
                 'm_education_level_id' => 3,
                 'm_experience_id' => 4,
+                'm_job_id' => 2,
                 'm_salary_id' => 4,
                 'skills' => [34, 35, 31, 10] // Android, iOS, Java, Kotlin
             ],
@@ -563,6 +591,7 @@ Biết cài đặt, sử dụng môi trường chạy web, app với Linux
                 'm_location_id' => 1,
                 'm_education_level_id' => 3,
                 'm_experience_id' => 5,
+                'm_job_id' => 1,
                 'm_salary_id' => 6,
                 'skills' => [1, 2, 3, 10] // PHP, Laravel, FrontEnd, Java
             ],
@@ -595,6 +624,7 @@ Một người có thể lãnh đạo nhóm tốt',
                 'm_location_id' => 1,
                 'm_education_level_id' => 4,
                 'm_experience_id' => 5,
+                'm_job_id' => 1,
                 'm_salary_id' => 6,
                 'skills' => [17, 11, 10] // Javascript, Spring, Java
             ],
@@ -619,6 +649,7 @@ Làm quen với thiết kế hướng đối tượng và các mẫu thiết k�
                 'm_location_id' => 1,
                 'm_education_level_id' => 4,
                 'm_experience_id' => 6,
+                'm_job_id' => 1,
                 'm_salary_id' => 7,
                 'skills' => [1, 13, 27, 19, 20, 21, 28] // PHP, MySQL, NodeJS, ReactJS, VueJS, AngularJS, NestJS
             ],
@@ -634,6 +665,7 @@ Làm quen với thiết kế hướng đối tượng và các mẫu thiết k�
                 'm_location_id' => 1,
                 'm_education_level_id' => 4,
                 'm_experience_id' => 2,
+                'm_job_id' => 1,
                 'm_salary_id' => 3,
                 'skills' => [17, 5] // Javascript, Python
             ],
@@ -655,6 +687,7 @@ Làm quen với thiết kế hướng đối tượng và các mẫu thiết k�
                 'm_location_id' => 1,
                 'm_education_level_id' => 4,
                 'm_experience_id' => 6,
+                'm_job_id' => 1,
                 'm_salary_id' => 6,
                 'skills' => [3, 17, 19] // FrontEnd, Javascript, ReactJS
             ],
@@ -679,6 +712,7 @@ Những lợi ích:
                 'm_location_id' => 1,
                 'm_education_level_id' => 4,
                 'm_experience_id' => 6,
+                'm_job_id' => 1,
                 'm_salary_id' => 6,
                 'skills' => [4, 16, 15, 8, 9, 13] // BackEnd, Redis, MongoDB, Ruby, Ruby on Rails, MySQL
             ],
@@ -699,6 +733,7 @@ Những lợi ích:
                 'm_location_id' => 1,
                 'm_education_level_id' => 4,
                 'm_experience_id' => 6,
+                'm_job_id' => 1,
                 'm_salary_id' => 6,
                 'skills' => [3, 19, 25] // FrontEnd, ReactJS, Sass,
             ],
@@ -746,6 +781,7 @@ Có kinh nghiệm sử dụng công cụ kiểm thử tự động (NeoLoad)',
                 'm_location_id' => 1,
                 'm_education_level_id' => 4,
                 'm_experience_id' => 3,
+                'm_job_id' => 3,
                 'm_salary_id' => 4,
                 'skills' => [44, 36] //
             ],
@@ -772,6 +808,7 @@ Kỹ năng phân tích và giải quyết vấn đề mạnh mẽ.',
                 'm_location_id' => 1,
                 'm_education_level_id' => 4,
                 'm_experience_id' => 4,
+                'm_job_id' => 3,
                 'm_salary_id' => 4,
                 'skills' => [44, 36, 41] //
             ],
@@ -790,6 +827,7 @@ Thực hiện các công việc khác theo phân công của cấp quản lý.',
                 'm_location_id' => 1,
                 'm_education_level_id' => 4,
                 'm_experience_id' => 2,
+                'm_job_id' => 2,
                 'm_salary_id' => 3,
                 'skills' => [29, 34, 35, 33] // Swift, Android, iOS, Flutter
             ],
@@ -802,6 +840,7 @@ Thực hiện các công việc khác theo phân công của cấp quản lý.',
                 'm_location_id' => 1,
                 'm_education_level_id' => 4,
                 'm_experience_id' => 4,
+                'm_job_id' => 2,
                 'm_salary_id' => 4,
                 'skills' => [29, 35, 26, 30] // Swift, iOS, Git, Object-C
             ],
@@ -825,6 +864,7 @@ Liên tục khám phá, đánh giá và triển khai các công nghệ mới nh�
                 'm_location_id' => 1,
                 'm_education_level_id' => 3,
                 'm_experience_id' => 4,
+                'm_job_id' => 2,
                 'm_salary_id' => 4,
                 'skills' => [29, 35, 26, 30, 34, 31] // Swift, iOS, Git, Object-C, Android, Kotlin
             ],
@@ -840,6 +880,7 @@ Có cơ hội làm việc trong môi trường Cross-team (Mobile, Crypto, Game,
                 'm_location_id' => 1,
                 'm_education_level_id' => 3,
                 'm_experience_id' => 3,
+                'm_job_id' => 1,
                 'm_salary_id' => 4,
                 'skills' => [1, 17, 20, 25] // PHP, Javascript, VueJS, Sass
             ],
@@ -861,6 +902,7 @@ Tham gia thiết kế CSDL, mô hình hệ thống CNTT trong Công ty',
                 'm_location_id' => 1,
                 'm_education_level_id' => 4,
                 'm_experience_id' => 3,
+                'm_job_id' => 1,
                 'm_salary_id' => 4,
                 'skills' => [1, 10, 12, 25] // PHP, Java, .NET
             ],
@@ -881,6 +923,7 @@ Kỹ năng tiếng Anh trung cấp',
                 'm_location_id' => 1,
                 'm_education_level_id' => 4,
                 'm_experience_id' => 3,
+                'm_job_id' => 1,
                 'm_salary_id' => 4,
                 'skills' => [1, 10, 5, 27] // PHP, Java, Python, NodeJS
             ],
@@ -897,6 +940,7 @@ Database: Postgresql, Elasticsearch, Redis',
                 'm_location_id' => 1,
                 'm_education_level_id' => 4,
                 'm_experience_id' => 3,
+                'm_job_id' => 1,
                 'm_salary_id' => 4,
                 'skills' => [1, 21, 17, 5, 19, 16] // PHP, AngularJS, Javascript, Python, ReactJS, Redis
             ],
@@ -927,6 +971,7 @@ Cơ sở dữ liệu: MySQL',
                 'm_location_id' => 1,
                 'm_education_level_id' => 4,
                 'm_experience_id' => 5,
+                'm_job_id' => 1,
                 'm_salary_id' => 4,
                 'skills' => [1, 17, 19, 27] // PHP, Javascript, ReactJS, NodeJS
             ],
@@ -949,6 +994,7 @@ Theo kịp các công nghệ mới nhất và thực tiễn tốt nhất; hỗ t
                 'm_location_id' => 1,
                 'm_education_level_id' => 4,
                 'm_experience_id' => 3,
+                'm_job_id' => 1,
                 'm_salary_id' => 3,
                 'skills' => [1, 17] // PHP, Javascript
             ],
@@ -977,6 +1023,7 @@ Nhiệm vụ khác sẽ được giao bởi người quản lý.',
                 'm_location_id' => 1,
                 'm_education_level_id' => 4,
                 'm_experience_id' => 7,
+                'm_job_id' => 1,
                 'm_salary_id' => 9,
                 'skills' => [3, 17, 19, 20, 21] // FrontEnd, Javascript, ReactJS, VueJS, AngularJS
             ],
@@ -999,6 +1046,7 @@ Phát triển giải pháp',
                 'm_location_id' => 1,
                 'm_education_level_id' => 4,
                 'm_experience_id' => 4,
+                'm_job_id' => 1,
                 'm_salary_id' => 4,
                 'skills' => [12] // .NET
             ],
@@ -1017,6 +1065,7 @@ Nghiên cứu, tìm hiểu các công nghệ về HTML/CSS Javascript mới nh�
                 'm_location_id' => 1,
                 'm_education_level_id' => 4,
                 'm_experience_id' => 2,
+                'm_job_id' => 1,
                 'm_salary_id' => 3,
                 'skills' => [17, 18, 19, 3] // Javascript, Typescript, ReactJS, FrontEnd
             ],
@@ -1037,6 +1086,7 @@ Và các nhiệm vụ khác liên quan được phân công..',
                 'm_location_id' => 1,
                 'm_education_level_id' => 4,
                 'm_experience_id' => 1,
+                'm_job_id' => 1,
                 'm_salary_id' => 2,
                 'skills' => [10, 17] // Javascript, Java
             ],
@@ -1070,12 +1120,11 @@ Thông thạo phát triển web Java',
                 'm_location_id' => 1,
                 'm_education_level_id' => 4,
                 'm_experience_id' => 2,
+                'm_job_id' => 1,
                 'm_salary_id' => 4,
                 'skills' => [10, 4, 11, 14] // Java, BackEnd, Spring, PostgreSQL
             ],
         ); // 10
-
-// 50
 
         $jobs = array_merge($job_solashi, $job_misa, $job_fpt, $job_shopee, $job_softdreams, $job_a, $job_b, $job_c);
 

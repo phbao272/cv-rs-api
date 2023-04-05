@@ -22,6 +22,9 @@ class CreateJobsTable extends Migration
             $table->date("deadline")->nullable()->default("2023-06-01");
             $table->unsignedTinyInteger("active")->default(1);
 
+            $table->unsignedBigInteger("m_job_id");
+            $table->foreign('m_job_id')->references('id')->on('m_jobs')->onDelete('cascade');
+
             $table->unsignedBigInteger("company_id");
             $table->foreign('company_id')->references('id')->on('companies')->onDelete('cascade');
 
