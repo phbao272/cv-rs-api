@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Http\Middleware\PreventRequestsDuringMaintenance;
 use App\Models\User;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
@@ -84,6 +85,14 @@ class UserSeeder extends Seeder
         $limitCandidate = 150;
 
         for ($i = 0; $i < $limitCandidate; $i++) {
+            $m_experience_id = 0;
+
+            if ($i < 90) {
+                $m_experience_id = rand(2, 5);
+            } else {
+                $m_experience_id = rand(1, 8);
+            }
+
 
             DB::table('users')->insert([
                 'name' => $ten_nguoi[$i],
@@ -96,7 +105,7 @@ class UserSeeder extends Seeder
                 'name' => $ten_nguoi[$i],
                 'title' => $ten_nguoi[$i] . ' đang tìm việc làm',
                 'email' => $email_prefix .  "_" . ($i + 1) . '@gmail.com',
-                'birthday' => $faker->dateTimeBetween('01-01-1990', '31-12-2001'),
+                'birthday' => $faker->dateTimeBetween('01-01-1990', '31-12-1998'),
                 'phone_number' => $faker->phoneNumber,
 
                 "user_id" => ($i + 1),
@@ -107,8 +116,8 @@ class UserSeeder extends Seeder
 //                "m_working_form_id" => 1,
 
                 "m_location_id" => 1,
-                "m_education_level_id" => rand(2, 5),
-                "m_experience_id" => rand(1, 8),
+                "m_education_level_id" => 4, // Đại học
+                "m_experience_id" => $m_experience_id,
                 "m_working_form_id" => 1
             ]);
 
@@ -135,11 +144,19 @@ class UserSeeder extends Seeder
                     break;
             }
 
-            print_r("Candidate: " . $i . " StartId: " . $startId . ", " . $job_category . "\n");
 
             $pivot = count($skills);
 
-            $jj = rand(3, 5);
+            $jj = 0;
+
+            // Nếu người có trình độ duới 1 năm kinh nghiêm
+            if ($m_experience_id <= 2) {
+                $jj = 3;
+            } else if ($m_experience_id <= 4) { // 1 năm < x < 2 năm
+                $jj = rand(4, 5);
+            } else {
+                $jj = rand(5, 7);
+            }
 
 //            print_r("jj" . $jj);
 
@@ -157,6 +174,9 @@ class UserSeeder extends Seeder
                     'm_skill_id' => $skillId + $startId
                 ]);
             }
+
+            print_r("Candidate: " . $i . " StartId: " . $startId . ", " . $job_category . ", skills: " . $jj . ", " . $m_experience_id. "\n");
+
         }
 
         // Generate Data Companies
