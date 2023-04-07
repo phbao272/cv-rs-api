@@ -16,13 +16,10 @@ class CreateUserSimilaritiesTable extends Migration
         Schema::create('user_similarities', function (Blueprint $table) {
             $table->id();
 
-            $table->unsignedBigInteger("user_1_id");
-            $table->foreign('user_1_id')->references('id')->on('users')->onDelete('cascade');
+            $table->unsignedBigInteger("user_id");
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
 
-            $table->unsignedBigInteger("user_2_id");
-            $table->foreign('user_2_id')->references('id')->on('users')->onDelete('cascade');
-
-            $table->float("similarity");
+            $table->longText("user_similarity");
 
             $table->timestamps();
         });
