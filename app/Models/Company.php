@@ -12,4 +12,9 @@ class Company extends Model
     protected $fillable = [
         "name", "description", "photo", "user_id",
     ];
+
+    public function jobs()
+    {
+        return $this->hasMany(Job::class);
+    }
 }

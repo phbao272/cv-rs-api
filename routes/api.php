@@ -26,6 +26,9 @@ Route::namespace('\App\Http\Controllers\Api')
         Route::get('get-job', 'JobController@index');
         Route::get('get-job/{id}', 'JobController@show');
 
+        Route::get('hot-company', "CompanyController@hotCompany");
+        Route::post("search-job", "JobController@searchJob");
+
         Route::apiResources([
             'company' => 'CompanyController',
             'skill' => 'SkillController',
