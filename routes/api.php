@@ -36,7 +36,8 @@ Route::namespace('\App\Http\Controllers\Api')
             'education-level' => 'EducationLevelController',
             'experience' => 'ExperienceController',
             'working-form' => 'WorkingFormController',
-            'salary' => 'SalaryController'
+            'salary' => 'SalaryController',
+            'm-job' => 'MJobController'
         ]);
 
         Route::middleware(['auth:api'])->group(function () {

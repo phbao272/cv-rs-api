@@ -17,7 +17,7 @@ class Job extends Model
 
     protected $fillable = [
         "title", "description", "number_of_recruit", "deadline", "active", "company_id",
-        "m_location_id", "m_education_level_id", "m_experience_id", "m_working_form_id", "m_salary_id"
+        "m_location_id", "m_education_level_id", "m_experience_id", "m_working_form_id", "m_salary_id", "m_job_id"
     ];
 
     public function job_skills()
